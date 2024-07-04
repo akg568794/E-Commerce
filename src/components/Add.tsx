@@ -29,7 +29,7 @@ const Add = () => {
                 </div>
                 <div className="">Only <span className="text-orange-500">4 items</span>  left!<br/> {"Don't"} {"miss it"}.</div>
         </div>
-        <button className="w-36 text-sm rounded-3xl ring-1 ring-ak text-ak py-2 px-4 hover:bg-ak hover:text-white disabled:cursor-not-allowed disabled:bg-pink-200 disabled:text-white disabled:ring-none">Add to Cart</button>
+        <button className="w-18 text-sm rounded-3xl ring-1 ring-ak text-ak py-1 px-3 hover:bg-ak hover:text-white disabled:cursor-not-allowed disabled:bg-pink-200 disabled:text-white disabled:ring-none">Add to Cart</button>
       </div>
       </div>
     )
