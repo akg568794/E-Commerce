@@ -26,8 +26,6 @@ const Filter = () => {
             <select name="" id="" className="py-2 px-4 rounded-2xl text-xs font-medium bg-[#EBEDED]" >
                 <option>All Filters</option>
             </select>
-        </div>
-        <div className="">
             <select name="" id="" className="py-2 px-4 rounded-2xl text-xs font-medium bg-[#EBEDED]">
                 <option>Sort By</option>
                 <option value="">Price High to Low</option>
@@ -36,6 +34,9 @@ const Filter = () => {
                 <option value="">Oldest</option>
             </select>
         </div>
+    
+            
+
     </div>
   )
 }
