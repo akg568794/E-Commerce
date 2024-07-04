@@ -46,7 +46,7 @@ const Slider = () => {
             {slides.map((slide)=>(
                 <div className={`${slide.bg} w-screen h-full flex flex-col gap-16 xl:flex-row`} key={slide.id}>
                     {/* TEXT CONTAINER */}
-                    <div className=" h-1/3 sm:h-1/2 xl:w-1/2 xl:h-full flex flex-col items-center justify-center gap-8 2xl:gap-12 text-center">
+                    <div className=" h-1/3 sm:h-1/2  xl:w-1/2 xl:h-full flex flex-col items-center justify-center gap-8 2xl:gap-12 text-center">
                         <h2 className="text:xl lg:text-3xl 2xl:text-5xl">{slide.description}</h2>
                         <h1 className="text-5xl lg:text-6xl 2xl:text-8xl font-semibold">{slide.title}</h1>
                         <Link href={slide.url}><button className="rounded-md bg-black text-white py-3 px-4">Shop Now</button></Link>
@@ -58,7 +58,7 @@ const Slider = () => {
                 </div>
             ))}
         </div>
-        <div className="absolute m-auto left-1/2 bottom-8 flex gap-4">
+        <div className="absolute left-1/2 transform -translate-x-1/2 bottom-8 flex gap-4">
             {
             slides.map((slide,index)=>(
                 <div className={`w-3 h-3 rounded-full ring-1 ring-gray-600 cursor-pointer flex items-center justify-center ${current===index ? "scale-150": ""} `} key={slide.id}
