@@ -9,7 +9,7 @@ const Footer = () => {
         {/* LEFT */}
         <div className="w-full md:w-1/2 lg:w-1/4 flex flex-col gap-6 md:gap-8">
           <Link href="/">
-            <div className="text-2xl tracking-wide">AK</div>
+            <div className="text-2xl tracking-wide font-semibold"><span className="text-ak">Wix</span>Store</div>
           </Link>
           <p>
             Sector-32, Greater Noida, Gautam Buddh Nagar, Uttar Pradesh
