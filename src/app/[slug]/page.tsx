@@ -12,6 +12,7 @@ const SinglePage = async ({params}:{params:{slug:string}}) => {
     return notFound();
   }
   const product=products.items[0];
+
   return (
     <div className='px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative flex flex-col lg:flex-row gap-16'>
       {/* IMG */}
@@ -34,8 +35,10 @@ const SinglePage = async ({params}:{params:{slug:string}}) => {
             
           </div>
           <div className='h-[2px] bg-gray-100'/>
-          <CustomizeProduct/>
-          <Add/>
+          {product.variants && product.productOptions ? ( <CustomizeProduct productId={product._id!} variants={product.variants} productOptions={product.productOptions} />)
+          :(<Add productId={product._id!} variantId="00000000-0000-0000-0000-000000000000" stockNumber={product.stock?.quantity || 0}/> )
+          }
+          
           <div className='h-[2px] bg-gray-100'/>
           {product.additionalInfoSections?.map((section:any)=>(
            <div className='text-sm' key={section.title}>

@@ -2,20 +2,16 @@
 
 import { useState } from "react"
 
-const Add = () => {
+const Add = ({productId,variantId,stockNumber}:{productId:string,variantId:string,stockNumber:number}) => {
     const [quantity,setQuantity] =useState(1);
     const handleQuantity=(type: "i" | "d")=>{
-        if(quantity===1 && type==="d"){
-            return;
+        if (type === "d" && quantity > 1) {
+            setQuantity((prev) => prev - 1);
         }
-        if(quantity===4 && type==="i"){
-            return;
+        if (type === "i" && quantity < stockNumber) {
+            setQuantity((prev) => prev + 1);
         }
-        if(type==="d"){
-            setQuantity(quantity-1);
-        }else if(type==="i"){
-            setQuantity(quantity+1);
-        }
+
     }
     return (
       <div className='flex flex-col gap-4'>
@@ -27,7 +23,7 @@ const Add = () => {
                     {quantity}
                     <button className="cursor-pointer text-xl" onClick={()=>handleQuantity("i")}>+</button>
                 </div>
-                <div className="">Only <span className="text-orange-500">4 items</span>  left!<br/> {"Don't"} {"miss it"}.</div>
+                <div className="">Only <span className="text-orange-500">{stockNumber} items</span>  left!<br/> {"Don't"} {"miss it"}.</div>
         </div>
         <button className="w-18 text-sm rounded-md ring-1 ring-ak text-ak py-1 px-4 hover:bg-ak hover:text-white disabled:cursor-not-allowed disabled:bg-pink-200 disabled:text-white disabled:ring-none">Add to Cart</button>
       </div>
