@@ -17,6 +17,7 @@ const NavIcons = () => {
     }
     setIsProfileOpen((prev)=>!prev)
   }
+
   return (
     <div className="flex items-center gap-4 xl:gap-6 relative">
       <Image src="/profile.png" alt="profile" height={22} width={22} className="cursor-pointer" onClick={handleProfile}/>
